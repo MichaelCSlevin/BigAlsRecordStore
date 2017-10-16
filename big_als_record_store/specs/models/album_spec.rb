@@ -24,7 +24,7 @@ class TestAlbum < MiniTest::Test
 
  end
 
- def test_inventory
+ def test_stock
    assert_equal('Medium Stock', @iowa.inventory)
 
    #  someone buys two albums.

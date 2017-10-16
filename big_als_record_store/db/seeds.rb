@@ -1,5 +1,7 @@
 require_relative( '../models/album.rb' )
 require_relative( '../models/artist.rb' )
+require_relative( '../models/inventory.rb' )
+
 require('pry-byebug')
 
 Album.delete_all()
@@ -7,22 +9,18 @@ Artist.delete_all()
 
 # add artists to artist table
 artist1 = Artist.new({
-  'id' => 1,
   'name' => "Slipknot"
 })
 
 artist2 = Artist.new({
-  'id' => 2,
   'name' => "The Killers"
 })
 
 artist3 = Artist.new({
-  'id' => 3,
   'name' => "Savage Garden"
 })
 
 artist4 = Artist.new({
-  'id' => 4,
   'name' => "Ministry"
 })
 
@@ -32,40 +30,35 @@ artist3.save()
 artist4.save()
 
 album1 = Album.new({
-  'id' => 1,
-  'artist_id' => 1,
+  'artist_id' => artist1.id,
   'title' => 'Iowa',
   'quantity' => 5,
   'medium' => 'CD'
 })
 
 album2 = Album.new({
-  'id' => 2,
-  'artist_id' => 2,
+  'artist_id' => artist2.id,
   'title' => 'Hot Fuss',
   'quantity' => 10,
   'medium' => 'CD'
 })
 
 album3 = Album.new({
-  'id' => 3,
-  'artist_id' => 2,
+  'artist_id' => artist2.id,
   'title' => 'Wonderful Wonderful',
   'quantity' => 1,
   'medium' => 'vinyl'
 })
 
 album4 = Album.new({
-  'id' => 4,
-  'artist_id' => 3,
+  'artist_id' => artist3.id,
   'title' => 'Affirmation',
   'quantity' => 7,
   'medium' => 'CD'
 })
 
 album5 = Album.new({
-  'id' => 5,
-  'artist_id' => 4,
+  'artist_id' => artist4.id,
   'title' => 'The Mind is a Terrible Thing to Taste',
   'quantity' => 1,
   'medium' => 'vinyl'

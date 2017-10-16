@@ -1,25 +1,20 @@
 DROP TABLE IF EXISTS albums_by_artist;
--- DROP TABLE IF EXISTS albums;
--- DROP TABLE IF EXISTS artists;
+DROP TABLE IF EXISTS albums;
+DROP TABLE IF EXISTS artists;
 
--- CREATE TABLE artists
--- (
---   id SERIAL4 PRIMARY KEY,
---   name VARCHAR(255)
--- );
---
--- CREATE TABLE albums
--- (
---   id SERIAL4 PRIMARY KEY,
---   artist_id SERIAL4 REFERENCES artists(id),
---   title VARCHAR(255),
---   quantity INT,
---   medium VARCHAR(255)
--- );
-
-CREATE TABLE albums_by_artist AS
+CREATE TABLE artists
 (
-  SELECT albums.title "Album Title", artists.name "Artist Name" from albums INNER JOIN artists on albums.artist_id = artists.id
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255)
+);
+
+CREATE TABLE albums
+(
+  id SERIAL4 PRIMARY KEY,
+  artist_id SERIAL4 REFERENCES artists(id),
+  title VARCHAR(255),
+  quantity INT,
+  medium VARCHAR(255)
 );
 
 

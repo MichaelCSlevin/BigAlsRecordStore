@@ -11,15 +11,14 @@ attr_accessor( :id, :name)
 
   def save()
     sql = "INSERT INTO artists (
-    id,
     name
   )
     VALUES
   (
-    $1, $2
+    $1
   )
   returning id;"
-  values = [@id, @name]
+  values = [@name]
   results = SqlRunner.run(sql, 'tag', values)
   @id = results[0]['id'].to_i()
   end

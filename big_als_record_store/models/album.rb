@@ -32,7 +32,7 @@ attr_accessor :id, :artist_id, :title, :quantity, :medium
   def self.all()
     sql = "SELECT * FROM albums"
     values = []
-    artists = SqlRunner.run(sql, "show_all_albums", values)
+    albums = SqlRunner.run(sql, "show_all_albums", values)
     return albums.map { |album| Album.new(album) }
   end
 
@@ -64,13 +64,5 @@ attr_accessor :id, :artist_id, :title, :quantity, :medium
       SqlRunner.run(sql, "delete_all_albums", values)
     end
 
-    def inventory()
-      case @quantity
-      when 0..4
-        return 'Low Stock'
-      when 5..7
-        return 'Medium Stock'
-      end
-      return 'High Stock'
-    end
+
 end

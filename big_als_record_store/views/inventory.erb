@@ -1,0 +1,23 @@
+<h1>Inventory</h1>
+
+<% @inventory.each do |inventory| %>
+\<table class="tg">
+  <tr>
+    <th class="tg-yw4l"></th>
+    <th class="tg-yw4l"></th>
+    <th class="tg-yw4l"></th>
+    <th class="tg-yw4l"></th>
+    <th class="tg-yw4l"></th>
+  </tr>
+</table>  <p>Title: <%= inventory.album_title() %></p>
+  <p>Artist: <%= inventory.artist_name() %></p>
+  <p>Quantity: <%= inventory.quantity() %></p>
+  <p>Format: <%= inventory.medium() %></p>
+  <% end %>
+
+
+<!-- put table in for loop -->
+
+  <a href="/">
+      Home
+  </a>

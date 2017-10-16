@@ -1,0 +1,16 @@
+<h1>All Artists</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for artist in @artists %>
+  <tr>
+    <td><%= artist.name %></td>
+  </tr>
+  <% end %>
+</table>
+
+<a href="/">
+    Home
+</a>
