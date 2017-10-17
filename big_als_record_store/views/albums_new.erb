@@ -1,0 +1,42 @@
+<h1>Add Album</h1>
+
+<form action="/albums/" method="post">
+  Title:<br>
+  <input type="type" name="title">
+
+  <br>
+
+  <form action="/albums" method="post">
+    <label>
+      Artist:
+      <select name="artist_id">
+        <% for artist in @artists %>
+        <option value="<%= artist.id %>"><%= artist.name %></option>
+        <% end %>
+      </select>
+    </label>
+
+<br>
+<br>
+
+    <form action="/albums/" method="post">
+      Quantity:<br>
+      <input type="number" name="quantity" value="0">
+      <!-- added to reduce chance of user submitting invalid data -->
+
+<br>
+<br>
+      <form action="/albums/" method="post">
+        Format:<br>
+        <input type="text" name="medium">
+
+        <br>
+<input type="submit" name="album"><br>
+      </form>
+
+      <br>
+      <br>
+      <br>
+      <a href="/">
+        Home
+      </a>

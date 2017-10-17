@@ -1,22 +1,24 @@
 <h1>Inventory</h1>
 
-<% @inventory.each do |inventory| %>
-\<table class="tg">
+<table style="width:100%">
+
+  <% @inventory.each do |inventory| %>
+
   <tr>
-    <th class="tg-yw4l"></th>
-    <th class="tg-yw4l"></th>
-    <th class="tg-yw4l"></th>
-    <th class="tg-yw4l"></th>
-    <th class="tg-yw4l"></th>
+    <td><%= inventory.album_title() %></td>
+    <td><%= inventory.artist_name() %></td>
+    <td><%= inventory.quantity() %></td>
+    <td><%= inventory.medium() %></td>
+    <td><%= inventory.stock() %></td>
   </tr>
-</table>  <p>Title: <%= inventory.album_title() %></p>
-  <p>Artist: <%= inventory.artist_name() %></p>
-  <p>Quantity: <%= inventory.quantity() %></p>
-  <p>Format: <%= inventory.medium() %></p>
   <% end %>
 
+</table>
 
-<!-- put table in for loop -->
+
+
+
+<!-- put table *in* for loop -->
 
   <a href="/">
       Home

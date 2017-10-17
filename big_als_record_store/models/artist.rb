@@ -30,7 +30,7 @@ attr_accessor( :id, :name)
     return artists.map { |artist| Artist.new(artist) }
   end
 
-  def self_find(id)
+  def self.find(id)
     sql = "SELECT * FROM artists WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, "find_artist", values)

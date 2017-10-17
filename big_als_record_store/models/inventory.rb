@@ -1,14 +1,14 @@
 class Inventory
 
-attr_reader :album_title, :artist_name, :quantity, :medium, :artist_id, :album_id
+attr_accessor :album_title, :artist_name, :quantity, :medium, :artist_id, :album_id
 
   def initialize(inventory_hash)
     @album_title = inventory_hash['album_title']
     @artist_name = inventory_hash['artist_name']
-    @quantity = inventory_hash['quantity']
-    @medium = inventory_hash['format']
-    @artist_id = inventory_hash['artist_id']
-    @album_id = inventory_hash['album_id']
+    @quantity = inventory_hash['quantity'].to_i()
+    @medium = inventory_hash['medium']
+    @artist_id = inventory_hash['artist_id'].to_i()
+    @album_id = inventory_hash['album_id'].to_i()
   end
 
   def self.all()
@@ -17,7 +17,7 @@ attr_reader :album_title, :artist_name, :quantity, :medium, :artist_id, :album_i
     albums.title "album_title",
     artists.name "artist_name",
     albums.quantity "quantity",
-    albums.medium "format",
+    albums.medium "medium",
     artists.id "artist_id",
     albums.id "album_id"
     from albums
@@ -34,6 +34,7 @@ attr_reader :album_title, :artist_name, :quantity, :medium, :artist_id, :album_i
     when 5..7
       return 'Medium Stock'
     end
+    else
     return 'High Stock'
   end
 
