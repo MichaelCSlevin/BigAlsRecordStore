@@ -1,7 +1,51 @@
-/*body {
-  body  {
-      background-image: url("http://www.bhmpics.com/walls/koji_vinyl_background-wide.jpg");
-      color: white;
-  }
 
-}*/
+
+
+h1 {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+
+
+body {
+
+      background-image: url("http://www.bhmpics.com/walls/koji_vinyl_background-wide.jpg");
+      background-color:silver;
+      color: white
+
+
+}
+
+a:link {
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+a:visited {
+    color: #2fd9e2;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+a:hover {
+    color: #8dc687;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+a:active {
+    color: #fc9c49;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+tr {
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+}
+
+p {
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+}
