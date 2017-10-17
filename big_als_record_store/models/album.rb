@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Album
 
-attr_accessor :id, :artist_id, :title, :quantity, :medium
+attr_accessor :id, :artist_id, :title, :quantity, :medium, :genre
 
   def initialize (album_hash)
     @id = album_hash['id'].to_i if album_hash['id']
@@ -10,6 +10,7 @@ attr_accessor :id, :artist_id, :title, :quantity, :medium
     @title = album_hash['title']
     @quantity = album_hash['quantity']
     @medium = album_hash['medium']
+    @genre = album_hash['genre']
   end
 
   def save
@@ -17,14 +18,15 @@ attr_accessor :id, :artist_id, :title, :quantity, :medium
     artist_id,
     title,
     quantity,
-    medium
+    medium,
+    genre
     )
       VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
     RETURNING id;"
-    values = [@artist_id, @title, @quantity, @medium]
+    values = [@artist_id, @title, @quantity, @medium, @genre]
     results = SqlRunner.run(sql, "save_album", values)
     @id = results[0]['id'].to_i()
   end

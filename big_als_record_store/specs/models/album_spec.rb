@@ -9,7 +9,8 @@ class TestAlbum < MiniTest::Test
      "artist_id" => 1,
      "title" => "Iowa",
      "quantity" => 5,
-     "medium" => "CD"
+     "medium" => "CD",
+     "genre" => "metal"
    }
 
    @iowa = Album.new(@album_hash)
@@ -21,21 +22,9 @@ class TestAlbum < MiniTest::Test
    assert_equal("Iowa", @iowa.title)
    assert_equal(5, @iowa.quantity)
    assert_equal("CD", @iowa.medium)
+   assert_equal("metal", @iowa.genre)
 
  end
 
- def test_stock
-   assert_equal('Medium Stock', @iowa.inventory)
-
-   #  someone buys two albums.
-   @album_hash["quantity"] = 3
-   @iowa = Album.new(@album_hash)
-   assert_equal('Low Stock', @iowa.inventory)
-
-   #Big Al reorders way too much
-   @album_hash["quantity"] = 666
-   @iowa = Album.new(@album_hash)
-   assert_equal('High Stock', @iowa.inventory)
- end
 
 end

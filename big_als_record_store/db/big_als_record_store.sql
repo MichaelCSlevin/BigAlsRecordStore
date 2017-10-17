@@ -14,7 +14,8 @@ CREATE TABLE albums
   artist_id SERIAL4 REFERENCES artists(id),
   title VARCHAR(255),
   quantity INT,
-  medium VARCHAR(255)
+  medium VARCHAR(255),
+  genre VARCHAR(255)
 );
 
 

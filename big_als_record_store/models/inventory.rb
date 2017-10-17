@@ -5,6 +5,7 @@ attr_accessor :album_title, :artist_name, :quantity, :medium, :artist_id, :album
   def initialize(inventory_hash)
     @album_title = inventory_hash['album_title']
     @artist_name = inventory_hash['artist_name']
+
     @quantity = inventory_hash['quantity'].to_i()
     @medium = inventory_hash['medium']
     @artist_id = inventory_hash['artist_id'].to_i()

@@ -33,35 +33,40 @@ album1 = Album.new({
   'artist_id' => artist1.id,
   'title' => 'Iowa',
   'quantity' => 5,
-  'medium' => 'CD'
+  'medium' => 'CD',
+  'genre' => 'Metal'
 })
 
 album2 = Album.new({
   'artist_id' => artist2.id,
   'title' => 'Hot Fuss',
   'quantity' => 10,
-  'medium' => 'CD'
+  'medium' => 'CD',
+  'genre' => 'Rock'
 })
 
 album3 = Album.new({
   'artist_id' => artist2.id,
   'title' => 'Wonderful Wonderful',
   'quantity' => 1,
-  'medium' => 'vinyl'
+  'medium' => 'vinyl',
+  'genre' => 'Rock'
 })
 
 album4 = Album.new({
   'artist_id' => artist3.id,
   'title' => 'Affirmation',
   'quantity' => 7,
-  'medium' => 'CD'
+  'medium' => 'CD',
+  'genre' => 'Sickly Sweet Pop'
 })
 
 album5 = Album.new({
   'artist_id' => artist4.id,
   'title' => 'The Mind is a Terrible Thing to Taste',
   'quantity' => 1,
-  'medium' => 'vinyl'
+  'medium' => 'vinyl',
+  'genre' => 'metal'
 })
 
 album1.save()

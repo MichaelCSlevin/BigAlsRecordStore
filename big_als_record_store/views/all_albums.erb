@@ -1,7 +1,10 @@
 <h1>All Albums</h1>
 
 <% @albums.each do |album| %>
+  <hr>
   <p>Title: <%= album.title() %></p>
+  <p>Genre: <%= album.genre() %></p>
+</hr>
   <% end %>
 
   <a href="/">
