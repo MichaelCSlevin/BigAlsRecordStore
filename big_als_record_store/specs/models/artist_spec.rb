@@ -16,4 +16,5 @@ class TestArtist < MiniTest::Test
    assert_equal("Slipknot", slipknot.name)
  end
 
+ 
 end

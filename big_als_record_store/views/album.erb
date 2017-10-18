@@ -1,0 +1,23 @@
+<h1>Artist Albums</h1>
+<!-- if statement to check if any albums exist -->
+
+<!--  if albums print-->
+
+
+<table>
+  <tr>
+    <th>albums</th>
+  </tr>
+  <% for album in @albums %>
+  <tr>
+    <td><%= album.title %></td>
+  </tr>
+  <% end %>
+
+</table>
+
+<!-- if not print message, go to link album page -->
+
+<a href="/">
+    Home
+</a>

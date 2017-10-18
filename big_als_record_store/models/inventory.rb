@@ -1,11 +1,11 @@
 class Inventory
 
-attr_accessor :album_title, :artist_name, :quantity, :medium, :artist_id, :album_id
+attr_accessor :album_title, :artist_name, :genre, :quantity, :medium, :artist_id, :album_id
 
   def initialize(inventory_hash)
     @album_title = inventory_hash['album_title']
     @artist_name = inventory_hash['artist_name']
-
+    @genre = inventory_hash['genre']
     @quantity = inventory_hash['quantity'].to_i()
     @medium = inventory_hash['medium']
     @artist_id = inventory_hash['artist_id'].to_i()
@@ -17,6 +17,7 @@ attr_accessor :album_title, :artist_name, :quantity, :medium, :artist_id, :album
     SELECT
     albums.title "album_title",
     artists.name "artist_name",
+    albums.genre "genre",
     albums.quantity "quantity",
     albums.medium "medium",
     artists.id "artist_id",
@@ -34,9 +35,8 @@ attr_accessor :album_title, :artist_name, :quantity, :medium, :artist_id, :album
       return 'Low Stock'
     when 5..7
       return 'Medium Stock'
-    end
     else
     return 'High Stock'
   end
-
+end
 end

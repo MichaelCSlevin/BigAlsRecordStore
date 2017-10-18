@@ -7,6 +7,7 @@ class TestInventory < MiniTest::Test
     inventory_hash = {
       "album_title" => "Iowa",
       "artist_name" => "Slipknot",
+      "genre" => "Metal",
       "quantity" => 5,
       "medium" => "CD",
       "artist_id" => 1,
@@ -19,6 +20,7 @@ class TestInventory < MiniTest::Test
   def test_initialize
     assert_equal("Iowa", @inventory.album_title)
     assert_equal("Slipknot", @inventory.artist_name)
+    assert_equal("Metal", @inventory.genre)
     assert_equal(5, @inventory.quantity)
     assert_equal("CD", @inventory.medium)
     assert_equal(1, @inventory.artist_id)

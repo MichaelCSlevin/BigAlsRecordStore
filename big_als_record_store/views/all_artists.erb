@@ -6,7 +6,8 @@
   </tr>
   <% for artist in @artists %>
   <tr>
-    <td><%= artist.name %></td>
+    <td><a href="/albums/byartist/<%= artist.id %>">
+<%= artist.name %></a></td>
   </tr>
   <% end %>
 </table>

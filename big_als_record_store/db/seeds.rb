@@ -24,10 +24,21 @@ artist4 = Artist.new({
   'name' => "Ministry"
 })
 
+artist5 = Artist.new({
+  'name' => "Bruce Wooley"
+  })
+
+artist6 = Artist.new({
+    'name' => "Robert Hazard"
+    })
+
 artist1.save()
 artist2.save()
 artist3.save()
 artist4.save()
+artist5.save()
+artist6.save()
+
 
 album1 = Album.new({
   'artist_id' => artist1.id,
@@ -69,11 +80,29 @@ album5 = Album.new({
   'genre' => 'metal'
 })
 
+album6 = Album.new({
+  'artist_id' => artist5.id,
+  'title' => 'Video Killed the Radio Star',
+  'quantity' => 1,
+  'medium' => 'vinyl',
+  'genre' => 'Pop Rock'
+  })
+
+album7 = Album.new({
+  'artist_id' => artist6.id,
+  'title' => 'Girls Just Wanna Have Fun',
+  'quantity' => 1,
+  'medium' => 'vinyl',
+  'genre' => 'Pop Rock'
+    })
+
 album1.save()
 album2.save()
 album3.save()
 album4.save()
 album5.save()
+album6.save()
+album7.save()
 
 
 binding.pry

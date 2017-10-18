@@ -35,6 +35,3 @@ post '/artists/' do
   artist.save
   redirect to('/artists')
 end
-
-
-#redirect user

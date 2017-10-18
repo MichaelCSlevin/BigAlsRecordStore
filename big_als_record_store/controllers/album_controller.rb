@@ -19,3 +19,13 @@ post '/albums/' do
   album.save
   redirect to('/albums')
 end
+
+# get '/albums/artistalbums' do
+#   @artist = Artist.find(params)
+#   erb(:artistalbums)
+# end
+
+get '/albums/byartist/:artist_id' do
+@albums = Album.artist_albums(params[:artist_id])
+  erb(:album)
+end

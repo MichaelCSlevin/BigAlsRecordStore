@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Artist
 
-attr_accessor( :id, :name)
+  attr_accessor( :id, :name)
 
   def initialize(artist_hash)
     @id = artist_hash["id"].to_i if artist_hash["id"]
@@ -13,7 +13,7 @@ attr_accessor( :id, :name)
     sql = "INSERT INTO artists (
     name
   )
-    VALUES
+  VALUES
   (
     $1
   )
@@ -21,43 +21,48 @@ attr_accessor( :id, :name)
   values = [@name]
   results = SqlRunner.run(sql, 'tag', values)
   @id = results[0]['id'].to_i()
-  end
+end
 
-  def self.all()
-    sql = "SELECT * FROM artists"
-    values = []
-    artists = SqlRunner.run(sql, "show_all_artists", values)
-    return artists.map { |artist| Artist.new(artist) }
-  end
+def self.all()
+  sql = "SELECT * FROM artists"
+  values = []
+  artists = SqlRunner.run(sql, "show_all_artists", values)
+  return artists.map { |artist| Artist.new(artist) }
+end
 
-  def self.find(id)
-    sql = "SELECT * FROM artists WHERE id = $1"
-    values = [id]
-    results = SqlRunner.run(sql, "find_artist", values)
-    return Artist.new(results.first)
-  end
+def self.find(id)
+  sql = "SELECT * FROM artists WHERE id = $1"
+  values = [id]
+  results = SqlRunner.run(sql, "find_artist", values)
+  return Artist.new(results.first)
+end
 
-  def update(id)
-      sql = "UPDATE artist SET (name) = $1, (id) = ($2)
-        WHERE id = $2"
-      values = [@name, @id]
-        SqlRunner.run(sql, "update_artist", values)
-      end
+def update(id)
+  sql = "UPDATE artist SET (name) = $1, (id) = ($2)
+  WHERE id = $2"
+  values = [@name, @id]
+  SqlRunner.run(sql, "update_artist", values)
+end
 
 
 
-  def delete(id)
+def delete(id)
   sql = "DELETE FROM artists where id = $1"
   values = [@id]
   SqlRunner.run(sql, "delete_artist", values)
-  end
+end
 
-  def self.delete_all()
-    sql = "DELETE FROM artists"
-    values = []
-    SqlRunner.run(sql, "delete_all_artists", values)
-  end
+def self.delete_all()
+  sql = "DELETE FROM artists"
+  values = []
+  SqlRunner.run(sql, "delete_all_artists", values)
+end
 
-
+# returns albums for an artist
+def albums
+  sql = "SELECT title FROM albums where id = $1"
+  values = [@id]
+  SqlRunner.run(sql, "return_artist_albums", values)
+end
 
 end
